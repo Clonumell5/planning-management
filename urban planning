@@ -1,0 +1,44 @@
+Below is a simplified example of city planning map code in Python without comments:
+
+```python
+import matplotlib.pyplot as plt
+
+class CityMap:
+    def __init__(self, city_name, city_size):
+        self.city_name = city_name
+        self.city_size = city_size
+        self.buildings = []
+
+    def add_building(self, building):
+        self.buildings.append(building)
+
+    def show_map(self):
+        plt.figure(figsize=(8, 8))
+        plt.title(f"City Map of {self.city_name}")
+        plt.xlim(0, self.city_size)
+        plt.ylim(0, self.city_size)
+
+        for building in self.buildings:
+            plt.plot(building[0], building[1], 'ko', markersize=10)  # Plot buildings as black circles
+
+        plt.grid(True)
+        plt.xlabel("X Coordinate")
+        plt.ylabel("Y Coordinate")
+        plt.show()
+
+# Example usage
+if __name__ == "__main__":
+    city = CityMap("Metropolis", 100)
+    city.add_building((20, 30))
+    city.add_building((50, 70))
+    city.show_map()
+```
+
+In this code:
+
+- `CityMap` class represents a city map with attributes for city name, city size, and a list of buildings.
+- The `add_building` method adds a building to the city map.
+- The `show_map` method displays the city map using Matplotlib library.
+- Example usage demonstrates how to create a city map, add buildings to it, and display the map.
+
+This is a basic example, and you can extend it to include more features such as roads, parks, landmarks, etc., based on your city planning requirements.
